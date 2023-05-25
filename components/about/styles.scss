@@ -1,0 +1,46 @@
+@import '../../styles/breakpoints';
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.about {
+  &__content {
+    margin-top: 30px;
+    
+    &-text {
+      text-align: justify;
+      &::before {
+        content: '\A';
+        white-space: pre;
+      }
+    }
+
+    &-option {
+      margin-top: 80px;
+      max-width: 400px;
+      @include display-flex(center);
+
+      &-item {
+        height: 50px;
+        width: 45%;
+        line-height: 46px;
+        margin-right: 10px;
+        text-transform: capitalize;
+        @include border(all, $component-background, 2px);
+
+        &--contact {
+          background: $component-background;
+          @include text(14px, 500, normal, $white);
+        }
+
+        &--projects {
+          background: $white;
+          @include text(14px, 500, normal, $component-background);
+        }
+      }
+    }
+  }
+
+  @include desktop {
+    padding-top: 0;
+  }
+}

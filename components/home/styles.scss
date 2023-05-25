@@ -1,0 +1,68 @@
+@import '../../styles/breakpoints';
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.home {
+  width: 100%;
+  height: 100vh;
+  padding-top: 190px;
+  margin-bottom: 130px;
+
+  &-container {
+    &__wording {
+      &-name {
+        @include text(37px, 600, 45px, $title-color);
+        margin-bottom: 40px; 
+      }
+  
+      &-position {
+        @include text(25px, normal, 30px, $subtitle-color);
+        margin-bottom: 35px;
+      }
+  
+      &-curriculum {
+        @include text(17px, bold, 40px, $white);
+        border: 1px solid $section-background;
+        background: $component-background;
+        border-radius: 4px;
+        width: 250px;
+        padding: 10px;
+        letter-spacing: 2px;
+      }
+    }
+
+    &__img {
+      margin-top: 100px;
+      @include display-flex(center);
+  
+      .personal-img {
+        min-height: 300px;
+        width: 80%;
+      }
+    }
+  }
+
+  @include tablet {
+    padding-top: 50%;
+  
+    &-container {
+      @include display-flex(center);
+  
+      &__wording {
+        min-width: 50%;
+      }
+    }
+  }
+  
+  @include desktop {
+    padding-top: 20%;
+  
+    &-container {
+      @include display-flex(center);
+  
+      &__wording {
+        min-width: 50%;
+      }
+    }
+  }
+}

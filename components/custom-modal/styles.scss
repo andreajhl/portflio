@@ -1,0 +1,60 @@
+@import '~bootstrap/scss/bootstrap';
+@import '../../styles/breakpoints';
+@import '../../styles/mixins';
+
+.custon-modal {
+  @include display-flex(center);
+
+  &__carousel-item {
+    position: relative;
+    width: 100%;
+    min-height: 200px;
+    height: auto;
+
+    &-img {
+      object-fit: cover;
+      object-position: top;
+    }
+  }
+
+  @include tablet {
+    &__carousel-item {
+      min-height: 250px;
+
+      &-img {
+        object-fit: contain;
+        object-position: top;
+      }
+    }
+  }
+
+  @include desktop {
+    &__carousel-item {
+      min-height: 330px;
+
+      &-img {
+        object-fit: contain;
+        object-position: top;
+      }
+    }
+  }
+}
+
+.modal-dialog-centered {
+  justify-content: center;
+
+  .modal-content {
+    align-items: center;
+    
+    .modal-body {
+      margin-top: 20px;
+      max-width: 600px;
+    }
+  }
+
+  @include desktop {
+    .modal-content {
+      max-width: 600px;
+    }
+  }
+}

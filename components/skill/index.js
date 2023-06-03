@@ -3,8 +3,6 @@ import { techIcons, toolIcons} from '../../public/assets/icons';
 import './styles.scss';
 import wordings from '@/wordings';
 
-
-
 const Skill = () => {
   const { skill: { title, tech, tools } } = wordings;
 

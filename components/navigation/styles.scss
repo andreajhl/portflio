@@ -3,83 +3,81 @@
 @import '../../styles/mixins';
 
 .nav {
-  width: 100%;
   top: 0;
   left: 0;
-  z-index: 1080;
+  z-index: 99;
+  width: 100%;
   position: fixed;
-  background: linear-gradient(0deg, $main-background 0%, rgba(245,236,236,1) 55%);
   @include display-flex(center);
+  background: linear-gradient(0deg, $main-background 0%, rgba(245,236,236,1) 55%);
+
+  a {
+    color: $title-color;
+  }
 
   .navbar {
     width: 100%;
     max-width: 1220px;
     padding: 1rem 1.3rem;
-    @include text(1.1rem, 500, normal, $title-color);
+    @include text(1rem, 500, normal, $title-color);
+
+    &__toggle {
+      gap: .5rem;
+      border: none;
+      display: flex;
+      background: none;
+      flex-direction: column;
+
+      .icon-bar {
+        height: 2px;
+        width: 35px;
+        display: block;
+        border-radius: 5px;
+        transition: all .5s;
+        transform-origin: left;
+        background: $component-background;
+      }
+    }
+
+    &__toggle:active, .open {
+      .icon-bar:first-child {
+        transform: rotate(35deg);
+      }
+
+      .icon-bar:nth-child(2) {
+        opacity: 0;
+      }
+
+      .icon-bar:last-child {
+        transform: rotate(-37deg);
+      }
+
+      .navbar__collapse {
+        display: block;
+      }
+    }
   
     &__header {
+      width: 100%;
       @include display-flex(space-between, center);
-  
-      .navbar__toggle {
-        border: 0;
-        gap: .65rem;
-        border: none;
-        display: flex;
-        background: none;
-        flex-direction: column;
-  
-        .icon-bar {
-          height: 2px;
-          width: 35px;
-          display: block;
-          border-radius: 5px;
-          transition: all .5s;
-          transform-origin: left;
-          background: $component-background;
-        }
-      }
-  
-      .navbar__toggle:active, .open {
-        .icon-bar:first-child {
-          transform: rotate(45deg);
-        }
-  
-        .icon-bar:nth-child(2) {
-          opacity: 0;
-        }
-  
-        .icon-bar:last-child {
-          transform: rotate(-45deg);
-        }
-  
-        .navbar__collapse {
-          display: block;
-        }
-      }
     }
   
-    .navbar-brand {
-      @include text(3rem, bold, normal, $component-background)
+    &-brand {
+      @include text(2.4rem, bold, normal, $component-background);
+    }
+
+    &__menu {
+      height: 100%;
+      color: $title-color;
+      padding: 1rem 1.3rem;
+      flex-direction: column;
+      @include display-flex(space-between, left, space-between);
     }
   
-    &__collapse {
+    &__collapse,
+    &__menu-container {
       overflow-y: hidden;
       transition: all 0.40s ease;
-  
-      .navbar {
-        &__menu {
-          height: 100%;
-          list-style: none;
-          padding: 1rem 1.3rem;
-          flex-direction: column;
-          @include display-flex(space-between, left, space-between);
-  
-          &-container {
-            overflow-y: hidden;
-            transition: all 0.40s ease;
-          }
-        }
-      }
     }
   
     .collapse, .navbar__menu-container  {
@@ -94,6 +92,10 @@
   @include tablet {
     .navbar {
       padding: 1rem 2.5rem;
+      
+      &-brand {
+        @include text(3rem, bold, normal, $component-background);
+      }
     }
   }
 
@@ -102,30 +104,36 @@
   
     .navbar {
       padding: 1rem 3rem;
-      @include display-flex(space-between);
-
-      &__header {
-        display: inline-block;
-
-        .navbar__toggle {
-          display: none;
-        }
-      }
+      @include display-flex(space-between, baseline);
 
       .collapse {
         height: auto;
+        display: inline-block;
       }
-  
+
+      &__toggle {
+        display: none;
+      }
+
+      .navbar__menu-container, .in {
+        height: auto;
+      }
+
+      &-brand {
+        @include text(3.3rem, bold, normal, $component-background);
+      }
+
+      &__header {
+        width: auto;
+        display: inline-block;
+      }
+
+      &__menu {
+        @include display-flex(space-between, center);
+      }
+
       &__collapse {
         width: 65%;
-
-        .navbar__menu {
-          @include display-flex(space-between);
-
-          &-container {
-            height: auto;
-          }
-        }
       }
     } 
   }

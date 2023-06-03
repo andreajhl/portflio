@@ -53,12 +53,12 @@ const Navigation = () => {
                 </a>
               </li>
               <li>
-                <a title="Projects" href="#services" onClick={handleDropdown} className="navbar-link">
+                <a title="Projects" href="#projects" onClick={handleDropdown} className="navbar-link">
                   {wordings.navbar.projects}
                 </a>
               </li>
               <li>
-                <a title="Experiences" href="#experiences" onClick={handleDropdown} className="navbar-link">
+                <a title="Experiences" href="#curriculum" onClick={handleDropdown} className="navbar-link">
                   {wordings.navbar.experiences}
                 </a>
               </li>

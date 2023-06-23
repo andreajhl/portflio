@@ -1,0 +1,86 @@
+@import '../../styles/breakpoints';
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.curriculum {
+  width: 100%;
+  margin-top: 30px;
+
+  &__content {
+    width: 100%;
+    margin-top: 70px;
+    display: grid;
+    gap: 15px;
+
+    &-item {
+      height: auto;
+      width: 100%;
+      margin: 0 0 48px 0;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: $shadow-flat;
+      background: $white;
+      @include border(all, $gray-ligth);
+
+      &:hover {
+        .curriculum__content-item__head-date {
+          background: $component-background;
+          color: white
+        }
+      }
+
+      &__head {
+        margin-top: -50px;
+        margin-bottom: 30px;
+
+        &-date {
+          display: inline-block;
+          margin-bottom: 10px;
+          width: auto;
+          transition: $transition-hover;
+          padding: 10px 15px;
+          background: $white;
+          border-radius: 20px;
+          box-shadow: $shadow-flat;
+          @include border(all, $gray-ligth);
+          @include text(16px, normal, 28px, $subtitle-color);
+
+          &::after {
+            content: '.';
+          }
+        }
+
+        &-title {
+          @include text(20px, 600, 28px, $component-background);
+
+          &--ligth {
+            @include text(16px, 300, 28px, $gray);
+
+            &::before {
+              content: ' - ';
+            }
+          }
+        }
+      }
+
+      &__description {
+        text-align: justify;
+        color: $subtitle-color;
+        margin-top: 30px;
+      }
+    }
+  }
+
+  @include tablet {
+
+    &__content {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @include desktop {
+    &__content {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}

@@ -1,5 +1,4 @@
 import React from 'react';
-import Image from 'next/image';
 import { projectCard, projectsCarousel } from '@/constants/projects';
 import wordings from '@/wordings';
 import './styles.scss';

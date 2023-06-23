@@ -15,8 +15,8 @@ const About = () => {
         <p className='about__content-text'>{content.secondary}</p>
         <p className='about__content-text'>{content.tertiary}</p>
         <div className='about__content-option'>
-          <button className='about__content-option-item about__content-option-item--contact'>{option.contact}</button>
-          <button className='about__content-option-item about__content-option-item--projects'>{option.projects}</button>
+          <a className='about__content-option-item about__content-option-item--contact' href='#contact'>{option.contact}</a>
+          <a className='about__content-option-item about__content-option-item--projects' href='#projects'>{option.projects}</a>
         </div>
       </div>
     </section>

@@ -8,6 +8,8 @@
     
     &-text {
       text-align: justify;
+      color: $title-color;
+
       &::before {
         content: '\A';
         white-space: pre;
@@ -23,8 +25,10 @@
         height: 50px;
         width: 45%;
         line-height: 46px;
+        border-radius: 6px;
         margin-right: 10px;
         text-transform: capitalize;
+        @include display-flex(center);
         @include border(all, $component-background, 2px);
 
         &--contact {

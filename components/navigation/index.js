@@ -1,6 +1,6 @@
 'use client';
 import React, { useState } from 'react';
-import wordings from '../../wordings';
+import wordings from '../../i18n/translates/globals/es';
 import './styles.scss'
 import classNames from 'classnames';
 

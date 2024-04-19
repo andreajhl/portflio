@@ -1,4 +1,5 @@
 import React from 'react';
+import { appWithTranslation } from 'next-i18next';
 import Navigation from '../components/navigation'
 import '../styles/globals.scss';
 import { Inter } from 'next/font/google'
@@ -10,7 +11,7 @@ export const metadata = {
   description: 'Front End Developer',
 }
 
-export default function RootLayout({ children }) {
+const RootLayout = ({ children }) => {
   return (
     <html lang="en">
       <body>
@@ -21,3 +22,4 @@ export default function RootLayout({ children }) {
   )
 }
 
+export default appWithTranslation(RootLayout);
